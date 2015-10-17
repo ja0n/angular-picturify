@@ -3,8 +3,8 @@ var service = require('./angular-picturify.service');
 module.exports = angular.module('picturify.directive', [service]).directive('picturify', picturifyDirective).name;
 
 
-picturifyDirective.$inject = ['$sce','$timeout', 'picturify'];
-function picturifyDirective($sce,$timeout, picturify) {
+picturifyDirective.$inject = [$timeout', 'picturify'];
+function picturifyDirective($timeout, picturify) {
   'use strict';
 
   return {
