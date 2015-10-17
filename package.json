@@ -1,6 +1,6 @@
 {
   "name": "angular-picturify",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Angular filter, directive, and service to picturify image urls in a text.",
   "main": "index.js",
   "scripts": {
