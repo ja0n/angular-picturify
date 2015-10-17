@@ -1,11 +1,16 @@
 # angular-picturify
-Angular filter, directive, and service to picturify image urls in a text. As of **v0.0.1**, angular-picturify works for obvious image urls and base64 data. No content-type verification (future versions), only regex checking.
+Angular filter, directive, and service to picturify image urls in a text. As of **v0.0.3**, angular-picturify works for obvious image urls and base64 data. No content-type verification (future versions), only regex checking.
 #### Note: The module uses $sce internally, so it doesn't support **1.2.x** and previous versions (it's an one-line change, btw).
 
 ## Install
 
 ```
 npm install angular-picturify --save
+```
+To bundle and minify
+```
+cd node_modules/angular-picturify
+npm install && npm run webpack
 ```
 
 ## Usage

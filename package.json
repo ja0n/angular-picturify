@@ -4,7 +4,6 @@
   "description": "Angular filter, directive, and service to picturify image urls in a text.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "webpack && webpack --config webpack.config.min.js",
     "webpack": "webpack && webpack --config webpack.config.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
