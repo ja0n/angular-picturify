@@ -1,0 +1,40 @@
+{
+  "name": "angular-picturify",
+  "version": "1.0.0",
+  "description": "Angular filter, directive, and service to picturify image urls in a text.",
+  "main": "index.js",
+  "scripts": {
+    "install": "webpack && webpack --config webpack.config.min.js",
+    "webpack": "webpack && webpack --config webpack.config.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ja0n/angular-picturify.git"
+  },
+  "keywords": [
+    "angular",
+    "picturify",
+    "picture",
+    "png",
+    "jpg",
+    "webp",
+    "gif",
+    "bmp",
+    "html",
+    "filter",
+    "service",
+    "directive"
+  ],
+  "author": "ja0n",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ja0n/angular-picturify/issues"
+  },
+  "homepage": "https://github.com/ja0n/angular-picturify#readme",
+  "devDependencies": {
+    "brfs": "^1.4.1",
+    "transform-loader": "^0.2.3",
+    "webpack": "^1.12.2"
+  }
+}
