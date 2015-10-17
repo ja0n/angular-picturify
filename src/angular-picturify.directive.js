@@ -3,8 +3,8 @@ var service = require('./angular-picturify.service');
 module.exports = angular.module('picturify.directive', [service]).directive('picturify', picturifyDirective).name;
 
 
-picturifyDirective.$inject = [$timeout', 'picturify'];
-function picturifyDirective($timeout, picturify) {
+picturifyDirective.$inject = ['picturify'];
+function picturifyDirective(picturify) {
   'use strict';
 
   return {
@@ -12,7 +12,6 @@ function picturifyDirective($timeout, picturify) {
     link: function (scope, element, attrs) {
 
       var opts = angular.extend({}, scope.$eval(attrs.picturify));
-      console.log(opts);
 
       scope.$watch(function(newVal) {
         element.html(picturify.filter(element.html(), opts.target,  (opts.class || opts.width), opts.amount));
