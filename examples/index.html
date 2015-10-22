@@ -12,14 +12,11 @@
     </style>
   </head>
   <body ng-init="text = 'put image urls here'">
-    <textarea ng-model="text"></textarea>
-    <br/>
-    Filter:
-    <br/>
-    <span ng-bind-html="text | picturify:'_blank':'chat-img':0"></span>
-    <br/>
-    Directive:
-    <br/>
+    Input:<br/>
+    <textarea ng-model="text"></textarea><br/>
+    Filter:<br/>
+    <span ng-bind-html="text | picturify:'_blank':null:0"></span><br/>
+    Directive:<br/>
     <span ng-bind="text" picturify="{width: 250, amount: 1}"></span>
 
   </body>

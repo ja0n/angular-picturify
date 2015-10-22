@@ -28,12 +28,11 @@ Use as a [AngularJS Filter](http://docs.angularjs.org/guide/filters)
 
 ```html
 <!-- As a filer -->
-<div ng-bind="someModel | picturify"></div>
-
+<div ng-bind-html="someModel | picturify"></div>
 <!-- As a filter, with opts -->
-<div ng-bind="someModel | picturify:'_blank':'chat-img':3"></div>
+<div ng-bind-html="someModel | picturify:'_blank':'chat-img':3"></div>
 <!-- target="_blank" class="chat-img" -->
-<div ng-bind="someModel | picturify:'_parent':200:3"></div>
+<div ng-bind-html="someModel | picturify:'_parent':200:3"></div>
 <!-- target="_parent" width="200" -->
 ```
 
@@ -47,7 +46,7 @@ Use as a [AngularJS Directive](http://docs.angularjs.org/guide/directive)
 <div ng-bind="someModel" picturify="{class: 'chat-img', amount: 2, target: '_blank'}"></div>
 ```
 
-Inject as a [AngularJS Service](https://docs.angularjs.org/guide/providers)
+Inject as a [AngularJS Service](https://docs.angularjs.org/guide/services)
 
 ```javascript
 // Injected into controller
@@ -63,7 +62,7 @@ angular.module('someModule').controller('SomeCtrl', function ($scope, picturify)
 
 ## Note
 * The first parameter sets the target. Defaults to '_blank'.
-* The second sets the class/width*. Defaults to 150px.
+* The second sets the class/width*.
 * The third sets the max amount of images to be rendered. Defaults to 0, which renders all images.
 
 *The disambiguation lies on a simple 'string or number' verification

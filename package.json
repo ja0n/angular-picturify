@@ -32,7 +32,10 @@
   },
   "homepage": "https://github.com/ja0n/angular-picturify#readme",
   "devDependencies": {
+    "angular": "^1.4.7",
+    "angular-mocks": "^1.4.7",
     "brfs": "^1.4.1",
+    "karma": "^0.13.11",
     "transform-loader": "^0.2.3",
     "webpack": "^1.12.2"
   }
