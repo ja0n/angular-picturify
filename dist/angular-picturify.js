@@ -73,18 +73,17 @@
 	          : ''
 	          ;
 	
-	    //((?:data:image\/(?:\s*\S*);base64,(?:(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=))))(?=$|\s)|((?:https?\:\/\/|www\.)+(?![^\s]*?")(?:[\w.,@?!^=%&amp;:\/~+#-]*[\w@?!^=%&amp;\/~+#-]?\.(?:png|jpg|svg|gif|webp|bmp)))(?=$|\s)
-	    var regexStr = '((?:data:image\/(?:\\s*\\S*);base64,(?:(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=))))(?=$|\\s)|((?:https?\\:\/\/|www\\.)+(?![^\s]*?")([\\w.,@?!^=%&amp;:\/~+#-]*[\\w@?!^=%&amp;\/~+#-]?\\.(?:png|jpg|svg|gif|webp|bmp)))(?=$|\\s)';
+	    //              ((?:data:image\/(?:\s*\S*);base64,(?:(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=))))(?=$|\s)|((?:https?\:\/\/|www\.)+(?![^\s]*?")(?:[\w.,@?!^=%&amp;:\/~+#-]*[\w@?!^=%&amp;\/~+#-]?\.(?:png|jpg|svg|gif|webp|bmp))(?(?:\?(?:[\w-]+(?:=[\w-]*)?(?:&[\w-]+(=[\w-]*)?)*)?)?)(?=$|\s)
+	    var regexStr = '((?:data:image\/(?:\\s*\\S*);base64,(?:(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=))))(?=$|\\s)|((?:https?\\:\/\/|www\\.)+(?![^\s]*?")([\\w.,@?!^=%&amp;:\/~+#-]*[\\w@?!^=%&amp;\/~+#-]?\\.(?:png|jpg|svg|gif|webp|bmp))(?:\\?(?:[\\w-]+(?:=[\\w-]*)?(?:&[\\w-]+(=[\\w-]*)?)*)?)?)(?=$|\\s)';
 	    var regex = new RegExp(regexStr, n ? 'i' : 'gi');
 	
 	    var i = 0;
 	    do {
-	      text = text.replace(regex, '<a href="$&" target="'+ target +'"><img '+ style +'src="$&"/></a>')
+	      text = text.replace(regex, '<a href="$&" target="'+ target +'"><img '+ style +'src="$&"/></a>');
 	    } while((!n || ++i < n) && regex.test(text));
 	
-	    // return text;
 	    return $sce.trustAsHtml(text);
-	  }
+	  };
 	}
 
 
@@ -115,7 +114,6 @@
 	
 	module.exports = angular.module('picturify.directive', [service]).directive('picturify', picturifyDirective).name;
 	
-	
 	picturifyDirective.$inject = ['picturify'];
 	function picturifyDirective(picturify) {
 	  'use strict';
@@ -127,7 +125,7 @@
 	      var opts = angular.extend({}, scope.$eval(attrs.picturify));
 	
 	      scope.$watch(function(newVal) {
-	        element.html(picturify.filter(element.html(), opts.target,  (opts.class || opts.width), opts.amount));
+	        element.html(picturify.filter(element.html(), opts.target, (opts.class || opts.width), opts.amount));
 	      });
 	    }
 	  };

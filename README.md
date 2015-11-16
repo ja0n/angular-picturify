@@ -7,11 +7,6 @@ Angular filter, directive, and service to picturify image urls in a text. As of 
 ```
 npm install angular-picturify --save
 ```
-To bundle and minify
-```
-cd node_modules/angular-picturify
-npm install && npm run webpack
-```
 
 ## Usage
 
@@ -72,5 +67,5 @@ angular.module('someModule').controller('SomeCtrl', function ($scope, picturify)
 ## Build
 
 ```
-npm run webpack
+npm install && npm run webpack
 ```
